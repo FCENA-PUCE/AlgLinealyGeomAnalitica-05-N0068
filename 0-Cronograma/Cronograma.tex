@@ -1,0 +1,185 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Se puede ver la documentación aquí: 
+% https://github.com/alephsub0/LaTeX_aleph-notas
+
+% -- Paquetes adicionales 
+\usepackage{enumitem}
+\usepackage{array,booktabs,multirow,makecell}
+\usepackage{colortbl}
+\usepackage{longtable}
+\usepackage{url}
+\usepackage{pdflscape}
+\usepackage{amsmath,amssymb}
+
+% -- Datos 
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra Lineal y Geometría Analítica}
+\tema{Cronograma y actividades}
+\autor{Andrés Merino}
+\fecha{Semestre 2025-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+
+% -- Comandos para tablas
+\newcolumntype{C}[1]{>{\hspace{0pt}\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\definecolor{verde}{RGB}{0, 255, 127}
+\definecolor{celeste}{RGB}{68,195,218}
+
+\begin{document}
+\addtolength{\headheight}{1.8\baselineskip}
+\addtolength{\voffset}{-1.5\baselineskip}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resultados de aprendizaje} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}[leftmargin=*]
+\item 
+    \textbf{RdA 1:} Comprender los conceptos básicos del Álgebra Lineal y Geometría Analítica en el campo de la Ingeniería.
+    \begin{itemize}[leftmargin=*]
+        \item \textbf{Criterio 1.1:}  Identifica cuándo un Sistema de Ecuaciones Lineales es compatible o no, y cómo se relacionan con la representación gráfica de las ecuaciones.
+        \item \textbf{Criterio 1.2:} Distingue los conceptos básicos relacionados con aplicaciones lineales.
+        \item \textbf{Criterio 1.3:} Describe los conceptos de la Geometría Analítica en $R^2$.
+    \end{itemize}
+\item 
+    \textbf{RdA 2:} Analizar los problemas relacionados al Álgebra Lineal y Geometría Analítica en el campo de la Ingeniería.
+    \begin{itemize}[leftmargin=*]
+        \item \textbf{Criterio 2.1:} Resuelve Sistemas de Ecuaciones Lineales a través de matrices y determinantes.
+        \item \textbf{Criterio 2.2:} Resuelve operaciones con aplicaciones lineales.
+        \item \textbf{Criterio 2.3:} Resuelve problemas asociados a la Geometría Analítica.
+    \end{itemize}
+\item
+    \textbf{RdA 3:} Aplicar distintos tópicos del Álgebra Lineal y la Geometría Analítica en el campo de la Ingeniería.
+    \begin{itemize}[leftmargin=*]
+        \item \textbf{Criterio 3.1:} Modela distintas situaciones a través de Sistemas de Ecuaciones Lineales.
+        \item \textbf{Criterio 3.2:} Aplica los conceptos de transformaciones lineales al campo de la Ingeniería.
+        \item \textbf{Criterio 3.3:} Aplica los conceptos de la Geometría Analítica al campo de la Ingeniería.
+    \end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Contenidos generales} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item 
+    Matrices
+\item 
+    Sistemas de ecuaciones
+\item 
+    Determinantes
+\item 
+    Espacios vectoriales
+\item 
+    Aplicaciones lineales
+\item 
+    Valores y vectores propios
+\item 
+    Cónicas
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Actividades de evaluación} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Criterio 1.1}
+        \begin{itemize}[leftmargin=*]
+            \item \textbf{Cuestionario en línea 1 (100\%):} Evaluará la capacidad para identificar cuándo un sistema de ecuaciones lineales es compatible o no, mediante preguntas de opción múltiple y ejercicios gráficos breves.
+        \end{itemize}
+        
+    \item \textbf{Criterio 1.2}
+        \begin{itemize}[leftmargin=*]
+            \item \textbf{Cuestionario en línea 2 (100\%):} Medirá la habilidad para distinguir los conceptos básicos relacionados con aplicaciones lineales mediante preguntas conceptuales y análisis de afirmaciones breves.
+        \end{itemize}
+        
+    \item \textbf{Criterio 1.3}
+        \begin{itemize}[leftmargin=*]
+            \item \textbf{Cuestionario en línea 3 (100\%):} Evaluará la capacidad para describir los conceptos básicos de la Geometría Analítica en \( \mathbb{R}^2 \), mediante preguntas cortas de desarrollo y ejercicios gráficos breves.
+        \end{itemize}
+
+    \item \textbf{Criterio 2.1}
+        \begin{itemize}[leftmargin=*]
+            \item \textbf{Examen 1 (100\%):} Evaluará la capacidad para resolver sistemas de ecuaciones lineales utilizando matrices y determinantes mediante ejercicios prácticos de resolución y análisis.
+        \end{itemize}
+
+    \item \textbf{Criterio 2.2}
+        \begin{itemize}[leftmargin=*]
+            \item \textbf{Examen 2 - parte 1 (100\%):} Medirá la capacidad para resolver operaciones relacionadas con aplicaciones lineales, incluyendo análisis del núcleo e imagen, mediante problemas prácticos y breves justificaciones teóricas.
+        \end{itemize}
+    
+    \item \textbf{Criterio 2.3}
+        \begin{itemize}[leftmargin=*]
+            \item \textbf{Examen 2 - parte 2 (100\%):} Evaluará la capacidad para resolver problemas específicos asociados a la Geometría Analítica, especialmente cónicas, mediante ejercicios analíticos y gráficos.
+        \end{itemize}
+
+    \item \textbf{Criterio 3.1}
+        \begin{itemize}[leftmargin=*]
+            \item \textbf{Reto 1 (100\%):} Consistirá en la modelación de situaciones reales a través de sistemas de ecuaciones lineales, utilizando herramientas computacionales y análisis crítico de resultados.
+        \end{itemize}
+
+    \item \textbf{Criterio 3.2}
+        \begin{itemize}[leftmargin=*]
+            \item \textbf{Reto 2 - parte 1 (100\%):} Los estudiantes aplicarán transformaciones lineales para resolver problemas concretos de ingeniería, enfatizando el análisis y discusión de resultados obtenidos.
+        \end{itemize}
+
+    \item \textbf{Criterio 3.3}
+        \begin{itemize}[leftmargin=*]
+            \item \textbf{Reto 2 - parte 2 (100\%):} Evaluará la aplicación práctica de los conceptos de Geometría Analítica en situaciones reales del campo ingenieril, mediante ejercicios integradores donde se usarán técnicas matriciales y vectoriales.
+        \end{itemize}
+\end{itemize}
+
+
+
+\begin{landscape}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cronograma de Desarrollo del Curso} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}\small
+\setlength{\extrarowheight}{0ex}
+\setlength{\belowrulesep}{.6ex}
+\begin{longtable}{cccL{12cm}L{7.5cm}}
+    \toprule
+    &&\thead{Fecha}&\thead{Detalle de contenido} & \thead{Observación} \\
+    \midrule
+  \endfirsthead
+    \multicolumn{5}{l}{\footnotesize \ldots viene de la página anterior}\\
+    \toprule
+    &&\thead{Fecha}&\thead{Detalle de contenido} & \thead{Observación} \\
+    \midrule
+  \endhead
+        \bottomrule  \multicolumn{5}{r}{\footnotesize Continúa en la siguiente página\ldots}
+  \endfoot
+        \bottomrule
+  \endlastfoot
+1	&	1	&	1-ene	&	Matrices: Definiciones, operaciones y propiedades fundamentales	&		\\ \midrule	
+2	&	2	&	1-abr	&	Sistemas lineales: conceptos, definiciones y métodos de resolución	&		\\ \midrule	
+3	&	3	&	2-abr	&	Determinantes: definición, propiedades y resolución de sistemas	&	Cuestionario en línea 1	\\ \midrule	
+4	&	4	&	3-abr	&	Vectores en el plano y en $\mathbb{R}$: operaciones básicas, interpretación geométrica	&	Entrega Reto 1	\\ \midrule	
+5	&	5	&	7-abr	&	Ecuación vectorial y paramétrica de rectas y planos	&		\\ \midrule	
+6	&	6	&	8-abr	&	Espacios vectoriales y subespacios: conceptos básicos y ejemplos	&		\\ \midrule	
+7	&	7	&	9-abr	&	Independencia lineal, conjuntos generadores y bases	&		\\ \midrule	\rowcolor{celeste!50}
+8	&	8	&	10-abr	&	Evaluación	&	Examen 2	\\ \midrule	
+9	&	9	&	14-abr	&	Aplicaciones lineales: conceptos fundamentales, definición formal	&		\\ \midrule	
+10	&	10	&	15-abr	&	Núcleo, imagen y matriz asociada a una aplicación lineal	&		\\ \midrule	
+11	&	11	&	16-abr	&	Valores y vectores propios: concepto, métodos y análisis	&	Cuestionario en línea 2	\\ \midrule	
+12	&	12	&	17-abr	&	Diagonalización de matrices: procedimiento y aplicaciones	&		\\ \midrule	
+13	&	13	&	21-abr	&	Cónicas, definición matricial, clasificación 	&		\\ \midrule	
+14	&	14	&	22-abr	&	Producto interno, ortogonalidad y proyecciones	&		\\ \midrule	
+15	&	15	&	23-abr	&	Resolución de problemas con cónicas aplicando métodos vectoriales y matriciales	&	Cuestionario en línea 3	\\ \midrule	\rowcolor{celeste!50}
+16	&	16	&	24-abr	&	Evaluación	&	Examen 2; Entrega Reto 2	\\ 
+\end{longtable}
+\end{center}
+\end{landscape}
+
+\end{document} 
