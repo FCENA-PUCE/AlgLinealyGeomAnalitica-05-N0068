@@ -17,11 +17,6 @@
     ·
     <a href="https://github.com/ECFM-PUCE/AlgebraLineal-05-N0048/issues">Solicitar cambio</a>
     <br />
-    Abrir en 
-    <br />
-    <a href="https://www.overleaf.com/read/fqdzbzkfkjsq#a066bd">
-    <img src="https://img.shields.io/badge/Overleaf-47A141?logo=overleaf&logoColor=fff&style=for-the-badge" alt="Overleaf Badge">
-    </a>
   </p>
 </div>
 
@@ -67,39 +62,18 @@ Se utilizan metodologías activas de aprendizaje para fomentar una participació
 La evaluación del curso está diseñada para medir los resultados de aprendizaje específicos, asegurando que los estudiantes no solo adquieran conocimientos, sino que también desarrollen habilidades aplicables en sus campos profesionales. Se utiliza una combinación de exámenes, retos y evaluaciones continuas para proporcionar retroalimentación constante y promover la mejora continua del estudiante.
 
 ### Estructura del Proyecto
-El contenido del curso se organiza en diferentes directorios, cada uno con materiales específicos para facilitar el aprendizaje:
-
-- **01 Resumen**: Incluye un resumen compilado de los temas tratados.
-
-- **02 Resumen Python**: Resúmenes de conceptos de Álgebra Lineal y Geometría Analítica utilizando Python.
-
-- **03 Extra**: Material adicional para profundizar en temas específicos.
-
-- **04 Ejercicios**: Conjunto de ejercicios prácticos.
-
-- **05 Proyectos-Retos**: Proyectos y retos para aplicar los conocimientos adquiridos.
-
-- **06 Exámenes**: Exámenes para evaluar el progreso del estudiante.
-
-- **07 Actividades**: Actividades de aprendizaje y control de lectura.
-  - Clase Invertida
-  - Control Lectura
-  - Exposiciones
-
-- **08 Cuestionarios**: Cuestionarios para autoevaluación.
+En construcción...
 
 ## Últimos cambios
 
 ```
-- 2024-06-26
+- 2025-04-05
    - Se agrega el proyecto a GitHub para inicio de control de versiones.
 ```
 
 ## Tareas pendientes
 
-- Agregar los archivos .ipynb
-- Separar los resúmenes y ejercicios por capítulos
-- 
+- ...
 
 ## Créditos
 
