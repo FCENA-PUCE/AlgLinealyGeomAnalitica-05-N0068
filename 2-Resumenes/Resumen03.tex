@@ -1,0 +1,397 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Se puede ver la documentación aquí: 
+% https://github.com/alephsub0/LaTeX_aleph-notas
+
+% -- Paquetes adicionales 
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{booktabs}
+
+
+% -- Datos 
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientale}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra Lineal y Geometría Analítica}
+\tema{Resumen no. 3: Determinantes y Matriz inversa}
+\autor{Andrés Merino}
+\fecha{Semestre 2025-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+
+% -- Comandos adicionales
+\setlist[enumerate]{label=\roman*.}
+
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Determinantes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En esta sección tomaremos $n\in \N$, con $n>0$, e $I = \{ 1, 2, \ldots, n\}$.
+
+\begin{defi}[Menor]
+    Sean $A\in \Mat[\R]{n}{n}$ e $i,j\in I$. A la matriz de $\Mat[\R]{(n-1)}{(n-1)}$ que se obtiene eliminar la fila $i$ y la columna $j$ de $A$ se la llama el menor $ij$ de $A$, denotado por $A_{ij}$.
+\end{defi}
+
+\begin{advertencia}
+    En la literatura se puede encontrar la notación de $M_{ij}$ para el menor de $ij$ de $A$.
+\end{advertencia}
+
+\begin{defi}[Menor principal]
+    Sean $A\in \Mat[\R]{n}{n}$ y $k\in I$. A la matriz de $\Mat[\R]{k}{k}$ que se obtiene eliminar las $n-k$ últimas filas y columnas de $A$, se la llama el menor principal $k$ de $A$, denotado por $M_{k}$.
+\end{defi}
+
+\begin{advertencia}
+    En la literatura se puede encontrar la notación de $A_{k}$ para el menor principal $k$ de $A$.
+\end{advertencia}
+
+
+\begin{defi}[Determinantes] 
+    Sea $A\in \Mat[\R]{n}{n}$ se define el determinante de $A$, denotado por $\det(A)$ (o por $|A|$), de manera inductiva, como sigue:
+    \begin{itemize}
+    \item 
+        Si $n=1$ y $A=(a_{11})$, entonces $\det(A) = a_{11}$.
+    \item
+        Si $n>1$, entonces
+        \begin{align*}
+            \det(A) 
+            & = \sum_{k=1}^n a_{1k}(-1)^{1+k}\det(A_{1k})\\
+            & = a_{11}\det(A_{11}) - a_{12}\det(A_{12}) 
+            + \ldots +  (-1)^{1+n} a_{1n}\det(A_{1n}).
+        \end{align*}
+    \end{itemize}
+\end{defi}
+
+Ejemplos:
+\begin{itemize}
+\item 
+    Sea $A$ una matriz de orden $2 \times 2$ de la forma
+    \[ 
+        A=
+        \begin{pmatrix}
+         a_{11} & a_{12}\\
+         a_{21} & a_{22}
+        \end{pmatrix},
+    \]
+    se tiene que
+    \[
+        A_{11} = (a_{22})
+        \texty
+        A_{12} = (a_{21}),
+    \]
+    por lo tanto
+    \[
+        \det(A_{11}) = a_{11}
+        \texty
+        \det(A_{12}) = a_{12},
+    \]
+    de esta forma,
+    \[
+        \det(A) = a_{11}\det(A_{11}) - a_{12}\det(A_{12})
+            = a_{11}a_{22} - a_{12}a_{21},
+    \]
+    es decir,
+    \[
+        \det(A) = \begin{vmatrix}
+        a_{22} & a_{23} \\
+        a_{32} & a_{33}
+        \end{vmatrix}
+        = a_{11}a_{22} - a_{12}a_{21}.
+    \]
+\item Sea $A$ una matriz de orden $3 \times 3$ de la forma
+         \[ A=
+        \begin{pmatrix}
+         a_{11} & a_{12} & a_{13}\\
+         a_{21} & a_{22} & a_{23}\\
+         a_{31} & a_{32} & a_{33}\\
+        \end{pmatrix}
+        \]
+        \noindent el determinante de la matriz $A$ está dado por:
+        \[
+        \det(A) = a_{11}
+        \begin{vmatrix}
+        a_{22} & a_{23} \\
+        a_{32} & a_{33}
+        \end{vmatrix} - a_{12}
+        \begin{vmatrix}
+        a_{21} & a_{23} \\
+        a_{31} & a_{33} \\
+        \end{vmatrix}+ a_{13}
+        \begin{vmatrix}
+        a_{21} & a_{22} \\
+        a_{31} & a_{32}
+        \end{vmatrix}.
+        \]
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Propiedades de los determinantes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{teo}
+    Sea $A \in \Mat[\R]{n}{n}$. Si una fila o columna de $A$ contiene solo ceros, entonces $\det (A) =0$.
+\end{teo}
+
+
+\begin{teo}
+    Sea $A \in \Mat[\R]{n}{n}$ una matriz triangular superior o triangular inferior, entonces
+    \[
+        \det(A) = a_{11}a_{22} \cdots a_{nn},
+    \]
+    es decir, el determinante de una matriz triangular es el producto de los elementos de su diagonal principal.
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\R]{n}{n}$. El determinante de una matriz $A$ y de su transpuesta son iguales, es decir, 
+    \[
+        \det(A^\intercal) = \det(A).
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $A, B\in \Mat[\R]{n}{n}$, se tiene que:
+    \[
+        \det(AB) = \det(A)\det(B).
+    \]
+\end{teo}
+
+
+\begin{teo}
+    Sean $A, B \in \Mat[\R]{n}{n}$. Si la matriz $B$ se obtiene intercambiando dos filas o columnas de $A$ entonces
+    \[  
+        \det(B) = - \det(A).
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\R]{n}{n}$. Si dos filas o columnas de $A$ son iguales, entonces 
+    \[
+        \det(A) = 0
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $A, B \in \Mat[\R]{n}{n}$. Si $B$ se obtiene al multiplicar una fila o columna de $A$ por un escalar $\alpha \in \R$, entonces
+    \[
+        \det(B) = \alpha \det(A).
+    \]
+\end{teo}
+
+
+\begin{teo}
+    Sean $A\in \Mat[\R]{n}{n}$ y $\alpha \in\R$. Se tiene que
+    \[
+        \det(\alpha A) = \alpha^n \det(A).
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $A, B \in \Mat[\R]{n}{n}$, $\alpha\in\R$ e $i,j\in I$, con $i\neq j$. Si $B$ se obtiene al aplicar una operación de fila $\alpha F_i + F_j \to F_j$, entonces 
+    \[
+        \det(B) = \det(A).
+    \]
+\end{teo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Cofactores}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Cofactores]
+    Sean $A\in \Mat[\R]{n}{n}$ e $i,j\in I$. El cofactor $ij$ de $A$, denotado $C_{ij}$, está dado por
+    \[
+        C_{ij} = (-1)^{i+j} \det (A_{ij})
+    \]
+     donde $A_{ij}$ es el menor $ij$ de $A$.
+\end{defi}
+
+\begin{advertencia}
+    En la literatura, también se suele llamar menor al determinante de $A_{ij}$ en lugar de a la matriz, como lo haremos en este texto. Además, al cofactor, se lo suele denotar por $A_{ij}$.
+\end{advertencia}
+
+\begin{teo}
+    Sea $A \in \Mat[\R]{n}{n}$. Se tiene que para todo $i\in I$,
+    \[
+        \det(A) 
+        = \sum_{k=1}^n a_{ik}C_{ik} 
+        = a_{i1}C_{i1} + a_{i2}C_{i2} + \ldots + a_{in}C_{in}
+    \]
+    y
+    \[
+        \det(A) 
+        = \sum_{k=1}^n a_{ki}C_{ki} 
+        = a_{1i}C_{1i} + a_{2i}C_{2i} + \ldots + a_{ni}C_{ni}.
+    \]
+    El lado derecho de las igualdades toma el nombre de expansión por cofactores del determinante de $A$.
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Inversa de una matriz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}
+    Sea $A\in \Mat[\R]{n}{n}$ es no singular o invertible si existe una matriz $B\in \Mat[\R]{n}{n}$ tal que 
+    \[
+        AB = BA = I_n.
+    \]
+    A la matriz $B$ se la denomina inversa de $A$ y se la denota por $A^{-1}$. Si no existe tal matriz, entonces se dice que $A$ es singular o no invertible. 
+\end{defi}
+
+\begin{teo}
+    Si una matriz tiene inversa, la inversa es única. 
+\end{teo}
+
+\begin{teo}
+    Sea $A\in \Mat[\R]{n}{n}$. 
+    \begin{itemize}
+    \item 
+        Si $A$ es una matriz no singular, entonces $A^{-1}$ es no singular y 
+        \[ 
+            (A^{-1})^{-1} = A.
+        \]
+    \item 
+        Si $A$ y $B$ son matrices no singulares, entonces $AB$ es no singular y 
+        \[ 
+            (AB)^{-1} = B^{-1}A^{-1}.
+        \]
+    \item 
+        Si $A$ es una matriz no singular, entonces
+        \[
+            {(A^\intercal)}^{-1} = {(A^{-1})}^\intercal.
+        \]
+    \end{itemize}
+\end{teo}
+
+\begin{teo}
+    Sean $p\in\N^*$ y $A_1, A_2, \ldots, A_p \in \Mat[\R]{n}{n}$ matrices no singulares. Se tiene que $A_1 A_2 \cdots A_p$ es no singular y 
+    \[
+        (A_1 A_2 \cdots A_p)^{-1} = A_p^{-1} A_{p-1}^{-1} \cdots A_1^{-1}.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $A, B \in \Mat[\R]{n}{n}$. Se tiene que si $AB=I_n$, entonces $BA=I_n$.
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\R]{n}{n}$, se tiene que $A$ es no singular si y solo si es equivalente por filas a $I_n$. Es más
+    \[
+        (A|I_n) \sim (I_n|A^{-1}).
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\R]{n}{n}$, el sistema homogéneo 
+    \[
+        Ax = 0
+    \]
+    tiene una solución no trivial si y solo si $A$ es singular. 
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\R]{n}{n}$. Se tiene que $A$ es no singular si y solo si el sistema lineal $Ax=b$ tiene una solución única para cada vector $b \in \R^{n}$.
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\R]{n}{n}$, se tienen que las siguientes son equivalentes:
+    \begin{enumerate}
+    \item 
+        $A$ es no singular;
+    \item 
+        el sistema $Ax=0$ solamente tiene la solución trivial;
+    \item 
+        $A$ es equivalente por filas a $I_n$;
+    \item 
+        $\rang(A)=n$; y 
+    \item 
+        el sistema lineal $Ax=b$ tiene una solución única para cada vector $b \in \R^{n}$. 
+    \end{enumerate}
+\end{teo}
+
+
+\begin{defi}[Matriz de cofactores]
+    Sea $A \in \Mat[\R]{n}{n}$. La matriz de cofactores de $A$, que se denota por $\cof(A)$, es la matriz de $\Mat[\R]{n}{n}$ que está formada por los cofactores de $A$, es decir, 
+    \[
+        \cof(A) = (C_{ij}) = 
+        \begin{pmatrix}
+          C_{11} & C_{12} & \cdots & C_{1n} \\
+          C_{21} & C_{22} & \cdots & C_{2n} \\
+          \vdots & \vdots & \ddots &\vdots  \\
+          C_{n1} & C_{n2} & \cdots & C_{nn}
+        \end{pmatrix}.
+    \]
+\end{defi}
+
+
+\begin{defi}
+    Sea $A \in \Mat[\R]{n}{n}$. La matriz adjunta de $A$, que se denota por $\adj(A)$, es la matriz de $\Mat[\R]{n}{n}$ que está formada por la transpuesta de la matriz de los cofactores de $A$, es decir, 
+    \[
+        \adj(A) = \cof(A)^\intercal.
+    \]
+\end{defi}
+
+\begin{teo}
+    Sea $A \in \Mat[\R]{n}{n}$, entonces
+    \[
+        A (\adj(A)) = (\adj(A))A = \det(A)I_n.
+    \]
+\end{teo}
+
+\begin{cor}
+    Sea $A \in \Mat[\R]{n}{n}$. Si $\det(A) \neq 0$, entonces $A$ es invertible y
+    \[
+        A^{-1} = \dfrac{1}{\det(A)} \adj(A).
+    \]
+\end{cor}
+
+\begin{teo}
+    Sea $A \in \Mat[\R]{n}{n}$. Una matriz $A$ es no singular si y sólo si $\det(A) \neq 0$.
+\end{teo}
+
+
+\begin{teo}
+    Sea $A \in \Mat[\R]{n}{n}$. Si $A$ es no singular, entonces $\det(A) \neq 0$ y 
+    \[
+        \det(A^{-1}) = \dfrac{1}{\det(A)}.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\R]{n}{n}$. El sistema homogéneo $Ax = 0$ tiene una solución no trivial si y sólo si $\det(A) = 0$.
+\end{teo}
+
+\begin{teo}
+    Sean $A \in \Mat[\R]{n}{n}$ y $b\in\R^n$. El sistema $Ax = b$ tiene una solución única si y sólo si $\det(A) \neq 0$ y su solución es
+    \[
+        A^{-1}b.
+    \]
+\end{teo}
+
+\begin{teo}[Equivalencias no singulares]
+    
+    Sea $A \in \Mat[\R]{n}{n}$, se tienen que las siguientes son equivalentes:
+    \begin{enumerate}
+    \item 
+        $A$ es no singular;
+    \item 
+        el sistema $Ax=0$ tiene solamente la solución trivial;
+    \item 
+        $A$ es equivalente por filas a $I_n$;
+    \item 
+        $\rang(A)=n$; 
+    \item 
+        el sistema lineal $Ax=b$ tiene una solución única para cada vector $b \in \R^{n}$; y
+    \item 
+        $\det(A) \neq 0$.
+    \end{enumerate}
+\end{teo}
+
+
+\end{document}
