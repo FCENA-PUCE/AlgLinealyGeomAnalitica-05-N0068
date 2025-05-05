@@ -1,0 +1,119 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Se puede ver la documentación aquí: 
+% https://github.com/alephsub0/LaTeX_aleph-notas
+
+% -- Paquetes adicionales 
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{aleph-comandos}
+\hypersetup{
+    urlcolor=blue,
+    linkcolor=blue,
+}
+
+% -- Datos 
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientale}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra Lineal y Geometría Analítica}
+\tema{Clase 05: Espacios Vectoriales y subespacios}
+\autor{Andrés Merino}
+\fecha{Periodo 2025-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+
+% -- Comandos para tablas
+
+\begin{document}
+
+\encabezado
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Resultado de Aprendizaje}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RdA de la asignatura:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{RdA 1:} Comprender los conceptos básicos del Álgebra Lineal y Geometría Analítica en el campo de la Ingeniería.
+    \item \textbf{RdA 2:} Analizar los problemas relacionados al Álgebra Lineal y Geometría Analítica en el campo de la Ingeniería.
+    % \item \textbf{RdA 3:} Aplicar distintos tópicos del Álgebra Lineal y la Geometría Analítica en el campo de la Ingeniería.
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RdA de la actividad:}
+\begin{itemize}[leftmargin=*]
+\item Reconocer cuándo un conjunto con operaciones dadas forma un espacio vectorial.
+\item Verificar si un subconjunto dado es un subespacio vectorial.
+\item Analizar ejemplos concretos y abstractos de espacios y subespacios vectoriales.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introducción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Pregunta inicial:}
+¿Qué otros tipos de objetos matemáticos sabes sumar? ¿Se cumplen las mismas propiedades que con los números reales? ¿Y con los vectores?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Desarrollo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Actividad 1: Explorando definiciones a través de ejemplos}
+
+\paragraph{¿Cómo lo haremos?}
+\begin{itemize}[leftmargin=*]
+\item \textbf{Discusión guiada:} Se iniciará con preguntas sobre los ejemplos de la lectura asignada:
+\begin{itemize}
+\item ¿Qué condiciones cumplen las flechas en el espacio tridimensional para formar un espacio vectorial?
+\item ¿Qué se suma en el espacio de secuencias infinitas? ¿Cómo se define la multiplicación escalar?
+\item ¿Por qué el conjunto de polinomios de grado menor o igual a $n$ forma un espacio vectorial?
+\item ¿Cuál es la diferencia entre un espacio vectorial y un subespacio vectorial?
+\item ¿Por qué $\mathbb{R}^2$ no es subespacio de $\mathbb{R}^3$?
+\end{itemize}
+\item \textbf{Clase magistral:} Se presentarán las definiciones formales de espacio vectorial y subespacio vectorial, haciendo énfasis en la verificación de axiomas. Se utilizará el \href{https://fcena-puce.github.io/AlgLinealyGeomAnalitica-05-N0068/2-Resumenes/Resumen05.pdf}{Resumen05.pdf}.
+\item \textbf{Resolución de ejercicios:} Ejercicios similares a los del documento \href{https://fcena-puce.github.io/AlgLinealyGeomAnalitica-05-N0068/2-Ejercicios/Ejercicios05.pdf}{Ejercicios05.pdf}.
+\item \textbf{Visualización de videos:}
+\begin{itemize}
+\item \href{https://www.youtube.com/watch?v=fNk\_zzaMoSs\&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE\_ab}{Vectores - Capítulo 1 - 3Blue1Brown}
+\item \href{https://www.youtube.com/watch?v=TgKwz5Ikpc8}{Espacios vectoriales abstractos - 3Blue1Brown}
+\end{itemize}
+\item \textbf{Lectura adicional recomendada:} \href{https://blog.nekomath.com/algebra-lineal-i-subespacios-vectoriales/}{Álgebra Lineal I: Subespacios vectoriales - El blog de Leo}
+\end{itemize}
+
+\paragraph{Verificación de aprendizaje:}
+\begin{itemize}
+\item ¿Por qué el conjunto de todas las funciones reales es un espacio vectorial?
+\item ¿Cuál es la condición para que un subconjunto sea subespacio?
+\item ¿Qué propiedad impide que $\mathbb{R}^2$ sea subespacio de $\mathbb{R}^3$?
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Cierre}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Tarea:}
+Resolver del libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86083}{Álgebra lineal y sus aplicaciones de David C. Lay}, sección 4.1, los ejercicios: 1, 3, 5, 7, 9, 11, 23.
+
+\paragraph{Pregunta de investigación:}
+\begin{enumerate}[leftmargin=*]
+\item ¿Qué relación existe entre subespacios vectoriales y soluciones de sistemas homogéneos?
+\item ¿Cómo se representan gráficamente los subespacios vectoriales en $\mathbb{R}^2$ y $\mathbb{R}^3$?
+\item ¿Qué aplicaciones prácticas tienen los espacios vectoriales en la ingeniería y la informática?
+\end{enumerate}
+
+\paragraph{Para la próxima clase:}
+Visualizar el video \href{https://www.youtube.com/watch?v=k7RM-ot2NWY\&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE\_ab\&index=2}{Combinaciones lineales, espacio generado y vectores base}.
+Realizar la actividad de clase invertida: \href{https://fcena-puce.github.io/AlgLinealyGeomAnalitica-05-N0068/2-ClaseInvertida/02Est-Independencia.pdf}{02Est-Independencia.pdf}.
+
+
+
+\end{document} 
