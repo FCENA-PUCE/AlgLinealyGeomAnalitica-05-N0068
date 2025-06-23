@@ -1,0 +1,359 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Se puede ver la documentación aquí: 
+% https://github.com/alephsub0/LaTeX_aleph-notas
+
+% -- Paquetes adicionales 
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{booktabs}
+\usepackage{multicol}
+
+
+% -- Datos 
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra Lineal y Geometría Analítica}
+\tema{Resumen no. 8: Cónicas}
+\autor{Andrés Merino}
+\fecha{Periodo 2025-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+
+% -- Comandos adicionales
+\setlist[enumerate]{label=\roman*.}
+
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lugar geométrico}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Lugar geométrico]
+    Un lugar geométrico es un subconjunto de $\R^n$ de todos los puntos que cumplen una determinada condición. Por lo general, esta condición está dada por una ecuación, a esta se la llama, la ecuación del lugar geométrico.
+\end{defi}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Transformaciones del lugar geométrico}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{defi}[Traslaciones en el eje $x$]
+    Sea $h\in\R$. Dado un lugar geométrico, para realizar una traslación en el eje $x$ de $h$ unidades hacia la derecha se debe realizar la siguiente transformación en la ecuación del lugar geométrico:
+    \[
+        (x,y)\mapsto (x-h,y).
+    \]
+\end{defi}
+
+\begin{advertencia}
+    En la definición anterior:
+    \begin{itemize}
+        \item si $h$ es positivo, la traslación será hacia la derecha;
+        \item si $h$ es negativo, la traslación será hacia la izquierda.
+    \end{itemize}
+\end{advertencia}
+
+\begin{defi}[Traslaciones en el eje $y$]
+    Sea $k\in\R$. Dado un lugar geométrico, para realizar una traslación en el eje $y$ de $k$ unidades hacia arriba se debe realizar la siguiente transformación en la ecuación del lugar geométrico:
+    \[
+        (x,y)\mapsto (x,y-k).
+    \]
+\end{defi}
+
+\begin{advertencia}
+    En la definición anterior:
+    \begin{itemize}
+        \item si $k$ es positivo, la traslación será hacia arriba;
+        \item si $k$ es negativo, la traslación será hacia abajo.
+    \end{itemize}
+\end{advertencia}
+
+
+\begin{defi}[Reflexiones respecto al eje $x$]
+    Dado un lugar geométrico, para realizar una reflexión respecto al eje $x$ se debe realizar la siguiente transformación en la ecuación del lugar geométrico:
+    \[
+        (x,y)\mapsto (x,-y).
+    \]
+\end{defi}
+
+\begin{defi}[Reflexiones respecto al eje $y$]
+    Dado un lugar geométrico, para realizar una reflexión respecto al eje $y$ se debe realizar la siguiente transformación en la ecuación del lugar geométrico:
+    \[
+        (x,y)\mapsto (-x,y).
+    \]
+\end{defi}
+
+\begin{defi}[Reflexiones respecto al origen]
+    Dado un lugar geométrico, para realizar una reflexión respecto al origen se debe realizar la siguiente transformación en la ecuación del lugar geométrico:
+    \[
+        (x,y)\mapsto (-x,-y).
+    \]
+\end{defi}
+
+\begin{defi}[Rotación en torno al origen]
+    Sea \( \theta \in \mathbb{R} \) un ángulo en radianes. La rotación de un lugar geométrico en sentido horario alrededor del origen, mediante un ángulo \( \theta \), se expresa mediante la transformación:
+    \[
+        (x, y) \mapsto (x', y') = (x\cos\theta - y\sin\theta,\ x\sin\theta + y\cos\theta).
+    \]
+    Esta transformación puede escribirse como un producto matricial:
+    \[
+        \begin{pmatrix}
+        x' \\ y'
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+        \cos(\theta) & -\sin(\theta) \\
+        \sin(\theta) & \cos(\theta)
+        \end{pmatrix}
+        \begin{pmatrix}
+        x \\ y
+        \end{pmatrix}.
+    \]
+\end{defi}
+
+\begin{advertencia}
+    \begin{itemize}
+        \item Si \( \theta > 0 \), la rotación es en sentido \textbf{horario}.
+        \item Si \( \theta < 0 \), la rotación es en sentido \textbf{antihorario}.
+    \end{itemize}
+\end{advertencia}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{La circunferencia}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Circunferencia]
+    Dados un punto $(h,k)\in\R^2$ y $r>0$, una circunferencia es el lugar geométrico de todos los puntos cuya distancia al punto $(h,k)$ es igual a $r$. El punto $(h,k)$ es llamado centro de la circunferencia y a $r$ se lo llama radio de la circunferencia.
+\end{defi}
+
+\begin{teo}
+    La ecuación de una circunferencia puede ser de la forma
+    \[
+        (x-h)^2 + (y-k)^2 = r^2,
+    \]
+    con $h,k\in\R$ y $r>0$, donde
+    \begin{itemize}
+    \item 
+        su centro es el punto $(h,k)$; y
+    \item   
+        su radio es $r$.
+    \end{itemize}
+\end{teo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{La parábola}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Parábola]
+    Dados un punto $(x_0,y_0)$ y una recta $\ell$, una parábola es el lugar geométrico de todos los puntos cuya distancia al punto $(x_0,y_0)$ es igual a la distancia a la recta~$\ell$. 
+    
+    El punto es llamado foco de la parábola y la recta es llamada directriz de la parábola.
+    
+    A la recta perpendicular a la directriz que pasa por el foco se la llama eje de la parábola y al punto en el que esta recta corta la parábola se la llama vértice de la parábola.
+\end{defi}
+
+
+\begin{teo}
+    Si la ecuación de una parábola es de la forma 
+    \[
+        (x-h)^2=\pm4p(y-k),
+    \]
+    con $h,k\in\R$ y $p>0$, se dice que la parábola se abre  verticalmente y se tiene que
+    \begin{multicols}{2}
+    \begin{itemize}
+        \item su vértice es $(h,k)$;
+        \item su foco es $(h,k\pm p)$;
+        \item su directriz es $y=k\mp p$; y
+        \item su eje es $x=h$.
+    \end{itemize}
+    \end{multicols}
+\end{teo}
+
+\begin{teo}
+    Si la ecuación de una parábola es de la forma 
+    \[
+        (y-k)^2=\pm 4p(x-h),
+    \]
+    con $h,k\in\R$ y $p>0$, se dice que la parábola se abre horizontalmente y se tiene que
+    \begin{multicols}{2}
+    \begin{itemize}
+        \item su vértice es $(h,k)$;
+        \item su foco es $(h\pm p,k)$;
+        \item su directriz es $x=h \mp p$; y
+        \item su eje es $y=k$.
+    \end{itemize}
+    \end{multicols}
+\end{teo}
+
+\begin{advertencia}
+    En una parábola, la reflexión de cualquier recta perpendicular a la directriz, sobre la parábola, pasa por el foco.
+\end{advertencia}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{La elipse}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Elipse]
+    Dados dos puntos $(x_1,y_1)$ y $(x_2,y_2)$, diferentes, una elipse es el lugar geométrico de todos los puntos cuya suma de la distancia al punto $(x_1,y_1)$ y la distancia al punto $(x_2,y_2)$ es constante. 
+    
+    Los puntos $(x_1,y_1)$ y $(x_2,y_2)$ son llamados focos de la elipse. El punto medio entre estos es llamado centro de la elipse.
+    
+    La recta que pasa por los focos es llamada eje mayor de la elipse y los puntos en los cuales el eje mayor corta la elipse son llamados vértices de la elipse; la mitad de la distancia entre estos puntos es llamado radio mayor.
+    
+    La recta que perpendicular a eje mayor que pasa por el centro de la elipse es llamada eje menor y la mitad de la distancia entre los puntos en los que corta a la elipse el llamado radio meyor.
+\end{defi}
+
+
+\begin{teo}
+    Si la ecuación de una elipse es de la forma 
+    \[
+        \dfrac{(x-h)^2}{a^2}+\dfrac{(y-k)^2}{b^2}=1,
+    \]
+    con $h,k\in\R$ y $a,b>0$ tales que $a>b$, se dice que es una elipse horizontal y se tiene que
+    \vspace*{3mm}
+    \begin{multicols}{2}
+    \begin{itemize}
+        \item su centro es $(h,k)$;
+        \item sus vértices son $(h\pm a,k)$;
+        \item su radio mayor es $a$; 
+        \item su radio menor es $b$; y
+        \item sus focos son $(h\pm c,k)$,\\ donde $a^2=b^2+c^2$.
+    \end{itemize}
+    \end{multicols}
+\end{teo}
+
+
+\begin{teo}
+    Si la ecuación de una elipse es de la forma 
+    \[
+        \dfrac{(x-h)^2}{b^2}+\dfrac{(y-k)^2}{a^2}=1,
+    \]
+    con $h,k\in\R$ y $a,b>0$ tales que $a>b$, se dice que es una elipse vertical y se tiene que
+    % \vspace*{-5mm}
+    \begin{multicols}{2}
+    \begin{itemize}
+        \item su centro es $(h,k)$;
+        \item sus vértices son $(h,k\pm a)$; 
+        \item su radio mayor es $a$; 
+        \item su radio menor es $b$; y
+        \item sus focos son $(h,k\pm c)$,\\ donde $a^2=b^2+c^2$.
+    \end{itemize}
+    \end{multicols}
+\end{teo}
+
+
+\begin{advertencia}
+    En una elipse, la reflexión de cualquier recta que pase por un foco, sobre la elipse, pasa por el otro foco.
+\end{advertencia}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{La hipérbola}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Hipérbola]
+    Dados dos puntos $(x_1,y_1)$ y $(x_2,y_2)$, diferentes, una hipérbola es el lugar geométrico de todos los puntos cuya diferencia de distancias al punto $(x_1,y_1)$ y al punto $(x_2,y_2)$ es constante.
+
+    Los puntos $(x_1,y_1)$ y $(x_2,y_2)$ son llamados focos de la hipérbola. El punto medio entre estos es llamado centro de la hipérbola.
+
+    La recta que pasa por los focos es llamada eje transversal y los puntos en los cuales esta recta corta la hipérbola son llamados vértices; la mitad de la distancia entre estos puntos es llamado radio real.
+
+    La perpendicular al eje transversal que pasa por el centro se llama eje conjugado. A la hipérbola se le asocian dos asíntotas que pasan por el centro y determinan su comportamiento asintótico.
+\end{defi}
+
+\begin{teo}
+    Si la ecuación de una hipérbola es de la forma 
+    \[
+        \dfrac{(x-h)^2}{a^2}-\dfrac{(y-k)^2}{b^2}=1,
+    \]
+    con $h,k\in\R$ y $a,b>0$, se dice que es una hipérbola horizontal y se tiene que
+    \vspace*{3mm}
+    \begin{multicols}{2}
+    \begin{itemize}
+        \item su centro es $(h,k)$;
+        \item sus vértices son $(h\pm a,k)$;
+        \item sus focos son $(h\pm c,k)$,\\ donde $c^2 = a^2 + b^2$.
+    \end{itemize}
+    \end{multicols}
+\end{teo}
+
+\begin{teo}
+    Si la ecuación de una hipérbola es de la forma 
+    \[
+        \dfrac{(y-k)^2}{a^2}-\dfrac{(x-h)^2}{b^2}=1,
+    \]
+    con $h,k\in\R$ y $a,b>0$, se dice que es una hipérbola vertical y se tiene que
+    \vspace*{3mm}
+    \begin{multicols}{2}
+    \begin{itemize}
+        \item su centro es $(h,k)$;
+        \item sus vértices son $(h,k\pm a)$;
+        \item sus focos son $(h,k\pm c)$,\\ donde $c^2 = a^2 + b^2$.
+    \end{itemize}
+    \end{multicols}
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ecuación general de una cónica}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Ecuación general]
+    La ecuación general de una cónica en el plano es de la forma
+    \[
+        Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0,
+    \]
+    donde \( A, B, C, D, E, F \in \mathbb{R} \) y no todos \( A, B, C \) son cero. Esta expresión representa, dependiendo de los coeficientes, una parábola, una elipse, una hipérbola o una cónica degenerada.
+\end{defi}
+
+\begin{defi}[Forma matricial]
+    La ecuación general de una cónica puede escribirse de forma matricial como
+    \[
+        \big(
+        x \ \ y \ \ 1
+        \big)
+        \begin{pmatrix}
+        A & B/2 & D/2 \\
+        B/2 & C & E/2 \\
+        D/2 & E/2 & F
+        \end{pmatrix}
+        \begin{pmatrix}
+        x \\ y \\ 1
+        \end{pmatrix}
+         = 0.
+    \]
+    Esta expresión permite estudiar la cónica desde el álgebra lineal, analizando su parte cuadrática mediante la matriz simétrica
+    \[
+        Q = \begin{pmatrix}
+        A & B/2 \\
+        B/2 & C
+        \end{pmatrix}.
+    \]
+\end{defi}
+
+\begin{teo}[Clasificación mediante valores propios]
+    Sea \( Q \) la matriz simétrica asociada a la parte cuadrática de la cónica. Si \( \lambda_1, \lambda_2 \) son los valores propios de \( Q \), entonces:
+    \begin{itemize}
+        \item Si \( \lambda_1 \cdot \lambda_2 > 0 \), la cónica es una \textbf{elipse} (si, además \( \lambda_1 = \lambda_2 \), es un \textbf{círculo}).
+        \item Si \( \lambda_1 \cdot \lambda_2 < 0 \), la cónica es una \textbf{hipérbola}.
+        \item Si uno de los valores propios es cero y el otro no, la cónica es una \textbf{parábola}.
+        \item Si ambos son cero, se trata de una \textbf{cónica degenerada} (por ejemplo, un par de rectas coincidentes o vacía).
+    \end{itemize}
+\end{teo}
+
+\begin{advertencia}
+    Los vectores propios de \( Q \) indican la dirección de los ejes principales de la cónica. Por tanto, mediante un cambio de coordenadas ortogonal que diagonalice \( Q \), es posible eliminar el término mixto \( Bxy \).
+\end{advertencia}
+
+
+
+
+\end{document}

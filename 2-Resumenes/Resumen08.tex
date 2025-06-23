@@ -1,0 +1,148 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Se puede ver la documentación aquí: 
+% https://github.com/alephsub0/LaTeX_aleph-notas
+
+% -- Paquetes adicionales 
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{booktabs}
+
+
+% -- Datos 
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra Lineal y Geometría Analítica}
+\tema{Resumen no. 8: Valores y vectores propios}
+\autor{Andrés Merino}
+\fecha{Periodo 2025-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+
+% -- Comandos adicionales
+\setlist[enumerate]{label=\roman*.}
+
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 14
+%% Valores y vectores propios
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Valores y vectores propios}
+
+\begin{defi}
+    Sea $A\in \Mat[\R]{n}{n}$, se tiene que $\lambda\in \R$ es un valor propio de $A$ si existe $v\in \R^n$, con $v\neq 0$, tal que
+    \[
+        Av = \lambda v,
+    \]
+    además, $v$ es un vector propio de $A$ asociado al valor propio $\lambda$.
+\end{defi}
+
+
+\begin{teo}
+   Sean $A\in \Mat[\R]{n}{n}$ y $\lambda \in \R$. Se tiene que $\lambda$ es un valor propio de $A$ si y solo si
+   \[
+        \det(A - \lambda I) = 0,
+   \]
+   donde $I$ es la matriz identidad.
+\end{teo}
+
+\begin{teo}
+    Los valores propios de una matriz triangular son los elementos de la diagonal de la matriz. 
+\end{teo}
+
+
+\begin{defi}
+    Sea $A\in \Mat[\R]{n}{n}$. Al polinomio
+    \[
+        p_A(\lambda) = \det(A - \lambda I)
+    \]
+    se lo denomina polinomio característico de $A$.
+\end{defi}
+
+
+\begin{teo}[Teorema de Cayley–Hamilton]
+    Sea $A\in \Mat[\R]{n}{n}$ y $p_A(\lambda)$ su polinomio característico. Se tiene que
+    \[
+        p_A(A) = 0.
+    \]
+\end{teo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 14
+%% Diagonalización de matrices
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Diagonalización de Matrices}
+
+\begin{defi}
+    Sean $A,B\in \Mat[\R]{n}{n}$. Se dice que $A$ es semejante a $B$ si existe una matriz invertible $P\in \Mat[\R]{n}{n}$ tal que
+    \[
+        A = P^{-1} B P.
+    \]
+\end{defi}
+
+
+\begin{teo}
+    Sean $A,B,C\in \Mat[\R]{n}{n}$. Se tiene que
+    \begin{enumerate}
+    \item 
+        $A$ es semejante a $A$.
+    \item
+        Si $A$ es semejante a $B$, entonces $B$ es semejante a $A$.
+    \item
+        Si $A$ es semejante a $B$ y $B$ es semejante a $C$, entonces $A$ es semejante a $C$.
+    \end{enumerate}
+\end{teo}
+
+\begin{defi}
+    Sea $A\in \Mat[\R]{n}{n}$, se dice que $A$ es diagonalizable si $A$ es semejante a una matriz diagonal. Es decir, si existe una matriz invertible $P\in \Mat[\R]{n}{n}$ y una matriz diagonal $D\in \Mat[\R]{n}{n}$ tal que
+    \[
+        A = P^{-1} D P.
+    \]
+\end{defi}
+
+\begin{teo}
+    Sean $A,B\in \Mat[\R]{n}{n}$. Si $A$ y $B$ son semejantes, entonces $A$ y $B$ tienen los mismos valores propios, es decir, tienen el mismo espectro.
+\end{teo}
+
+\begin{teo}
+    Sea $A\in \Mat[\R]{n}{n}$. Se tiene que $A$ es diagonalizable si y solo si tiene $n$ vectores propios linealmente independientes.
+\end{teo}
+
+\begin{teo}
+    Sea $A\in \Mat[\R]{n}{n}$. Si $A$ tiene $n$ valores propios distintos entre sí, entonces $A$ es diagonalizable.
+\end{teo}
+
+\begin{teo}
+    Sea $A\in \Mat[\R]{n}{n}$. Si $A$ es diagonalizable, entonces tomando $D$ la matriz diagonal formada por los valores propios de $A$, y $P$ la matriz cuyas columnas son los vectores propios de $A$, se tiene que
+    \[
+        A = P^{-1} D P.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $A\in \Mat[\R]{n}{n}$. Si $A$ es simétrica, entonces $A$ todos sus valores propios son reales; además, $A$ es diagonalizable.
+\end{teo}
+
+\begin{defi}
+    Sea $A\in \Mat[\R]{n}{n}$. Se dice que $A$ es ortogonal si $A^\intercal = A^{-1}$.
+\end{defi}
+
+
+\begin{teo}
+    Sea $A\in \Mat[\R]{n}{n}$. Si $A$ es simétrica, y $D,P\in \Mat[\R]{n}{n}$ son tales que
+    \[
+        A = P^{-1} D P,
+    \]
+    entonces $P$ es ortogonal.
+\end{teo}
+
+
+
+
+\end{document}
