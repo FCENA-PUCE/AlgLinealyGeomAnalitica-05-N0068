@@ -1,0 +1,125 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Se puede ver la documentación aquí: 
+% https://github.com/alephsub0/LaTeX_aleph-notas 
+
+% -- Paquetes adicionales 
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\hypersetup{
+    urlcolor=blue,
+    linkcolor=blue,
+}
+
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientale}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra Lineal y Geometría Analítica}
+\tema{Clase 08: Valores y Vectores Propios}
+\autor{Andrés Merino}
+\fecha{Periodo 2026-01}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\section*{Resultado de Aprendizaje}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\subsection*{RdA de la asignatura:}  
+\begin{itemize}[leftmargin=*]  
+    \item \textbf{RdA 1:} Comprender los conceptos básicos del Álgebra Lineal y Geometría Analítica en el campo de la Ingeniería.  
+    \item \textbf{RdA 2:} Analizar los problemas relacionados al Álgebra Lineal y Geometría Analítica en el campo de la Ingeniería.  
+\end{itemize}  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\subsection*{RdA de la actividad:}  
+\begin{itemize}[leftmargin=*]  
+    \item Comprender los conceptos de valores propios y vectores propios de una matriz.  
+    \item Calcular el polinomio característico y determinar valores propios.  
+    \item Encontrar vectores propios asociados a cada valor propio.  
+    \item Diagonalizar matrices y aplicar este concepto en problemas de ingeniería.  
+\end{itemize}  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\section*{Introducción}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\paragraph{Pregunta inicial:}  
+¿Cómo podemos encontrar direcciones especiales en una transformación lineal donde los vectores solo se escalan?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\section*{Desarrollo}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\subsection*{Actividad 1: Introducción a valores y vectores propios}
+
+La clase comienza motivando la importancia de los valores y vectores propios mediante ejemplos de la física e ingeniería, como análisis de vibraciones, estabilidad de sistemas dinámicos y procesamiento de imágenes. Se introduce la relación fundamental $Av = \lambda v$.
+
+\paragraph{¿Cómo lo haremos?}  
+\begin{itemize}[leftmargin=*]  
+    \item \textbf{Motivación:} se presentan ejemplos reales de sistemas físicos donde los valores propios describen frecuencias naturales de vibración y los vectores propios describen los modos de vibración.
+    \item \textbf{Definición y conceptos base:} se explican los conceptos de valor propio, vector propio y la ecuación característica $Av = \lambda v$. Se usa el resumen \href{https://fcena-puce.github.io/AlgLinealyGeomAnalitica-05-N0068/2-Resumenes/Resumen08.pdf}{Resumen08.pdf}.  
+    \item \textbf{Cálculo del polinomio característico:} se introduce el polinomio característico $p_A(\lambda) = \det(A - \lambda I)$ y cómo usarlo para encontrar valores propios.
+    \item \textbf{Resolución de ejercicios:} los estudiantes resolverán, de manera guiada, ejercicios de cálculo de valores propios, vectores propios y casos especiales (matrices triangulares, simétricas).
+\end{itemize}  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\subsection*{Actividad 2: Diagonalización de matrices}
+
+Se trabaja el concepto de diagonalización como una transformación de similaridad que simplifica el cálculo de potencias de matrices y la solución de sistemas de ecuaciones diferenciales.
+
+\paragraph{¿Cómo lo haremos?}  
+\begin{itemize}[leftmargin=*]  
+    \item \textbf{Concepto de similaridad:} se introduce la relación de similaridad entre matrices y sus propiedades (reflexiva, simétrica, transitiva).
+    \item \textbf{Diagonalización:} se explica cuándo una matriz es diagonalizable ($A = P^{-1}DP$) y cómo construir las matrices $P$ y $D$.
+    \item \textbf{Criterios de diagonalizabilidad:} se discuten condiciones suficientes para que una matriz sea diagonalizable (valores propios distintos, matriz simétrica).
+    \item \textbf{Teorema de Cayley-Hamilton:} se introduce la propiedad especial de que toda matriz satisface su polinomio característico.
+    \item \textbf{Visualización de videos:} se recomendará el estudio con videos sobre transformaciones propias y diagonalización: 
+    \begin{itemize}
+        \item \href{https://youtu.be/PFDu9oVAE-g}{Eigenvalues and Eigenvectors}
+        \item \href{https://youtu.be/e50Bd-NcJ6c}{Matrix Diagonalization}
+    \end{itemize}  
+    \item \textbf{Implementación computacional:} se muestra el uso de herramientas computacionales (Python con NumPy o \href{https://matrixcalc.org/es/}{Matrix Calculator}) para calcular valores propios, vectores propios y diagonalización.
+\end{itemize}  
+
+\paragraph{Verificación de aprendizaje:}  
+\begin{itemize}[leftmargin=*]  
+    \item ¿Cómo se relacionan los valores propios de una matriz con el determinante y la traza?  
+    \item ¿Cuándo está garantizado que una matriz sea diagonalizable?  
+    \item ¿Qué significa geométricamente que una matriz sea semejante a otra?  
+    \item ¿Por qué los valores propios de una matriz simétrica siempre son reales?  
+\end{itemize}  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\section*{Cierre}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+
+\paragraph{Tarea:}  
+Resolver del libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86083&query_desc=kw%2Cwrdl%3A%20%C3%81lgebra%20lineal%20y%20sus%20aplicaciones}{Álgebra lineal y sus aplicaciones de David C. Lay}, sección 5.1 y 5.2, los ejercicios: 2, 5, 8, 12 y 15.
+
+\paragraph{Pregunta de investigación:}  
+\begin{enumerate}[leftmargin=*]  
+    \item ¿Cómo se usan los valores propios en el análisis de estabilidad de sistemas dinámicos y ecuaciones diferenciales?
+    \item ¿Qué aplicaciones tienen los valores propios en procesamiento de imágenes, análisis de redes sociales y búsqueda en Google (PageRank)?
+    \item ¿Cómo se relacionan los valores propios con el análisis de componentes principales (PCA) en machine learning?
+\end{enumerate}  
+
+\paragraph{Para la próxima clase:}  
+Leer las secciones 5.1 y 5.2 del libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86083&query_desc=kw%2Cwrdl%3A%20%C3%81lgebra%20lineal%20y%20sus%20aplicaciones}{Álgebra lineal y sus aplicaciones de David C. Lay}. Preparar preguntas sobre aplicaciones de diagonalización.
+
+
+\end{document}
